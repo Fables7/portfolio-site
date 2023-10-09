@@ -5,6 +5,7 @@ interface CustomButtonProps {
   onClick?: () => void;
   className?: string;
   href?: string;
+  type?: "button" | "submit" | "reset";
 }
 
 const CustomButton = ({
@@ -12,6 +13,7 @@ const CustomButton = ({
   onClick,
   className,
   href,
+  type,
 }: CustomButtonProps) => {
   const rootClassName = clsx(
     "underline underline-offset-[10px] decoration-[var(--accent)] hover:text-[var(--accent)] w-fit",
@@ -24,7 +26,7 @@ const CustomButton = ({
           {label}
         </a>
       ) : (
-        <button onClick={onClick} className={rootClassName}>
+        <button type={type} onClick={onClick} className={rootClassName}>
           {label || "CONTACT ME"}
         </button>
       )}
