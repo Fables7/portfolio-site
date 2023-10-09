@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { ContactButton } from "@/components";
 import Image from "next/image";
 
 const icons = [
-  { link: "", icon: faGithub },
+  { link: "https://github.com/Fables7", icon: faGithub },
   {
     link: "https://www.linkedin.com/in/fabien-lestrat-1ab41b1b1/",
     icon: faLinkedin,
@@ -12,7 +13,7 @@ const icons = [
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center border-2 border-red-500  p-4 box-border">
+    <main className="flex min-h-screen flex-col items-center  p-4 box-border">
       <header className="flex flex-col items-center">
         <h3 className="">Fabien Lestrat</h3>
         <div className="flex justify-between w-[100px] mt-4">
@@ -27,14 +28,14 @@ export default function Home() {
       </header>
       <div className="flex items-center flex-col">
         <Image
-          className=""
+          priority
+          className=" w-auto mt-4 mb-10"
           src="/profile.jpeg"
           alt="profile"
           width={100}
           height={100}
-          style={{ width: "auto" }}
         />
-        <div>
+        <div className="flex flex-col">
           <h1 className=" text-center">Nice to meet you!</h1>
           <h1 className=" text-center ">
             {"I'm "}
@@ -42,11 +43,13 @@ export default function Home() {
               Fabien Lestrat
             </span>
           </h1>
-          <p className=" text-center mt-8">
-            Based in the UK, I'm a web developer passionate about building
+          <p className=" text-center my-8 ">
+            Based in the UK, {"I'm "}a web developer passionate about building
             accessible web apps that users love.
           </p>
+          <ContactButton />
         </div>
+        <div className="w-full h-[1px] bg-white mt-20" />
       </div>
     </main>
   );
