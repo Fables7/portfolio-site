@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { ContactButton, ExperienceBox } from "@/components";
+import { CustomButton, ExperienceBox, ProjectsBox } from "@/components";
 import Image from "next/image";
 
 const icons = [
@@ -49,11 +49,12 @@ export default function Home() {
             Based in the UK, {"I'm "}a web developer passionate about building
             accessible web apps that users love.
           </p>
-          <ContactButton />
+          <CustomButton />
         </div>
         <div className="w-full h-[1px] bg-white mt-20 mb-10" />
         <ExperienceBox items={experienceItems} />
-        <div className="w-full h-[1px] bg-white mt-8" />
+        <div className="w-full h-[1px] bg-white mt-8 mb-8" />
+        <ProjectsBox />
       </div>
     </main>
   );
