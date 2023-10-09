@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { ContactButton } from "@/components";
+import { ContactButton, ExperienceBox } from "@/components";
 import Image from "next/image";
 
 const icons = [
@@ -10,6 +10,8 @@ const icons = [
     icon: faLinkedin,
   },
 ];
+
+const experienceItems = ["HTML", "CSS", "JavaScript", "Accessibility", "React"];
 
 export default function Home() {
   return (
@@ -49,7 +51,9 @@ export default function Home() {
           </p>
           <ContactButton />
         </div>
-        <div className="w-full h-[1px] bg-white mt-20" />
+        <div className="w-full h-[1px] bg-white mt-20 mb-10" />
+        <ExperienceBox items={experienceItems} />
+        <div className="w-full h-[1px] bg-white mt-8" />
       </div>
     </main>
   );
