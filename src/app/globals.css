@@ -55,3 +55,13 @@ p {
   font-size: 1.125rem;
   color: var(--text);
 }
+
+footer {
+  background-color: var(--secondary-black);
+  height: 60rem;
+  padding: 1rem;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
