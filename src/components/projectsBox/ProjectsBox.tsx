@@ -35,7 +35,9 @@ const ProjectsBox = () => {
                   })}
                 </ul>
               </div>
-              <div>
+              <div className="flex">
+                <CustomButton label="VIEW PROJECT" />
+                <CustomButton label="VIEW CODE" />
                 <a href={project.link}>Link</a>
                 <a href={project.code}>Code</a>
               </div>
