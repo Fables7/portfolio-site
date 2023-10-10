@@ -18,6 +18,10 @@ const Form = () => {
     message: "",
   });
 
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [messageError, setMessageError] = useState(false);
+
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -29,6 +33,30 @@ const Form = () => {
 
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    setNameError(false);
+    setEmailError(false);
+    setMessageError(false);
+
+    if (!formState.name) {
+      setNameError(true);
+    }
+    if (!formState.email || !/\S+@\S+\.\S+/.test(formState.email)) {
+      setEmailError(true);
+    }
+    if (!formState.message) {
+      setMessageError(true);
+    }
+
+    if (
+      !formState.name ||
+      !formState.email ||
+      !formState.message ||
+      !/\S+@\S+\.\S+/.test(formState.email)
+    ) {
+      return;
+    }
+
     if (form.current) {
       emailjs
         .sendForm(
@@ -46,6 +74,7 @@ const Form = () => {
           }
         );
     }
+
     console.log("form submitted");
   };
 
@@ -58,7 +87,7 @@ const Form = () => {
   };
 
   const rootClassName =
-    "w-full bg-transparent focus:outline-none px-8 border-b-2 border-white mb-4 text-white placeholder-opacity-50 placeholder-[white] pb-3 box-border focus-within:border-[var(--accent)]";
+    "w-full bg-transparent focus:outline-none px-8 border-b-2  text-white placeholder-opacity-50 placeholder-[white] pb-3 box-border focus-within:border-[var(--accent)]";
 
   const messageClassName = clsx(rootClassName, "resize-y h-[100px]");
   return (
@@ -67,32 +96,59 @@ const Form = () => {
       className="mt-8 flex flex-col w-full items-end"
       ref={form}
     >
-      <input
-        type="text"
-        name="name"
-        placeholder="NAME"
-        value={formState.name}
-        onChange={handleInputChange}
-        className={rootClassName}
-        onKeyDown={handleKeyPress}
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="EMAIL"
-        value={formState.email}
-        onChange={handleInputChange}
-        className={rootClassName}
-        onKeyDown={handleKeyPress}
-      />
-      <textarea
-        name="message"
-        placeholder="MESSAGE"
-        value={formState.message}
-        onChange={handleInputChange}
-        className={messageClassName}
-        onKeyDown={handleKeyPress}
-      />
+      <div className="w-full flex flex-col items-end mb-6">
+        <input
+          type="text"
+          name="name"
+          placeholder="NAME"
+          value={formState.name}
+          onChange={handleInputChange}
+          className={rootClassName}
+          style={{ borderColor: nameError ? "var(--red)" : "white" }}
+          onKeyDown={handleKeyPress}
+        />
+        {nameError && (
+          <p className="text-[0.75rem] text-[var(--red)] mt-1">
+            Sorry, invalid format here
+          </p>
+        )}
+      </div>
+
+      <div className="w-full flex flex-col items-end mb-6">
+        <input
+          type="email"
+          name="email"
+          placeholder="EMAIL"
+          value={formState.email}
+          onChange={handleInputChange}
+          className={rootClassName}
+          style={{ borderColor: emailError ? "var(--red)" : "white" }}
+          onKeyDown={handleKeyPress}
+        />
+        {emailError && (
+          <p className="text-[0.75rem] text-[var(--red)] mt-1">
+            Sorry, invalid format here
+          </p>
+        )}
+      </div>
+
+      <div className="w-full flex flex-col items-end mb-6">
+        <textarea
+          name="message"
+          placeholder="MESSAGE"
+          value={formState.message}
+          onChange={handleInputChange}
+          className={messageClassName}
+          style={{ borderColor: messageError ? "var(--red)" : "white" }}
+          onKeyDown={handleKeyPress}
+        />
+        {messageError && (
+          <p className="text-[0.75rem] text-[var(--red)] mt-1">
+            Sorry, invalid format here
+          </p>
+        )}
+      </div>
+
       <CustomButton label="SEND MESSAGE" type="submit" />
     </form>
   );
