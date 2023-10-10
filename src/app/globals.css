@@ -58,9 +58,9 @@ p {
 
 footer {
   background-color: var(--secondary-black);
-  height: 60rem;
-  padding: 1rem;
-  padding-top: 4rem;
+
+  box-sizing: border-box;
+  padding: 4rem 1rem 4rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
