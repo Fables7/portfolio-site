@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { CustomButton } from "..";
 import clsx from "clsx";
+import emailjs from "emailjs-com";
 
 interface FormState {
   name: string;
@@ -10,6 +11,7 @@ interface FormState {
 }
 
 const Form = () => {
+  const form = useRef<HTMLFormElement>(null);
   const [formState, setFormState] = useState<FormState>({
     name: "",
     email: "",
@@ -27,6 +29,23 @@ const Form = () => {
 
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (form.current) {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_SERVICE_ID || "",
+          process.env.NEXT_PUBLIC_TEMPLATE_ID || "",
+          form.current,
+          process.env.NEXT_PUBLIC_PUBLIC_KEY || ""
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
     console.log("form submitted");
   };
 
@@ -46,6 +65,7 @@ const Form = () => {
     <form
       onSubmit={onSubmitHandler}
       className="mt-8 flex flex-col w-full items-end"
+      ref={form}
     >
       <input
         type="text"
