@@ -29,6 +29,15 @@ const Form = () => {
     e.preventDefault();
     console.log("form submitted");
   };
+
+  const handleKeyPress = (
+    e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    if (e.key === "Enter" && e.target instanceof HTMLInputElement) {
+      e.preventDefault();
+    }
+  };
+
   const rootClassName =
     "w-full bg-transparent focus:outline-none px-8 border-b-2 border-white mb-4 text-white placeholder-opacity-50 placeholder-[white] pb-3 box-border focus-within:border-[var(--accent)]";
 
@@ -45,6 +54,7 @@ const Form = () => {
         value={formState.name}
         onChange={handleInputChange}
         className={rootClassName}
+        onKeyDown={handleKeyPress}
       />
       <input
         type="email"
@@ -53,6 +63,7 @@ const Form = () => {
         value={formState.email}
         onChange={handleInputChange}
         className={rootClassName}
+        onKeyDown={handleKeyPress}
       />
       <textarea
         name="message"
@@ -60,6 +71,7 @@ const Form = () => {
         value={formState.message}
         onChange={handleInputChange}
         className={messageClassName}
+        onKeyDown={handleKeyPress}
       />
       <CustomButton label="SEND MESSAGE" type="submit" />
     </form>
