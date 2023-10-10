@@ -1,6 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { CustomButton, ExperienceBox, ProjectsBox } from "@/components";
+import {
+  CustomButton,
+  ExperienceBox,
+  ProjectsBox,
+  Divider,
+} from "@/components";
 import Image from "next/image";
 
 const icons = [
@@ -37,7 +42,7 @@ export default function Home() {
           width={100}
           height={100}
         />
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
           <h1 className=" text-center">Nice to meet you!</h1>
           <h1 className=" text-center ">
             {"I'm "}
@@ -51,9 +56,9 @@ export default function Home() {
           </p>
           <CustomButton />
         </div>
-        <div className="w-full h-[1px] bg-white mt-20 mb-10" />
+        <Divider className=" mt-20 mb-10" />
         <ExperienceBox items={experienceItems} />
-        <div className="w-full h-[1px] bg-white mt-8 mb-8" />
+        <Divider className=" mt-8 mb-8" />
         <ProjectsBox />
       </div>
     </main>
