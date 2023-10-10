@@ -22,7 +22,7 @@ const CustomButton = ({
   return (
     <>
       {href ? (
-        <a className={rootClassName} href={href}>
+        <a target="_blank" className={rootClassName} href={href}>
           {label}
         </a>
       ) : (

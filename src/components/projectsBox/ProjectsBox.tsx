@@ -5,23 +5,23 @@ const projects = [
   {
     title: "GITHUB SEARCH",
     tools: ["React", "TypeScript", "Tailwind"],
-    image: "",
-    link: "",
-    code: "",
+    image: "/github-search-thumbnail.jpeg",
+    link: "https://fables7-github-search-user.netlify.app/",
+    code: "https://github.com/Fables7/github-user-search-app",
   },
   {
     title: "MEMORY GAME",
     tools: ["React", "TypeScript", "Tailwind"],
-    image: "",
-    link: "",
-    code: "",
+    image: "/memory-game-thumbnail.webp",
+    link: "https://fables7-memory-game.netlify.app/",
+    code: "https://github.com/Fables7/memory-game",
   },
   {
     title: "FRIDGE APP",
     tools: ["React-Native", "TypeScript", "CSS", "Node.js", "MongoDB"],
     image: "",
     link: "",
-    code: "",
+    code: "https://github.com/Fables7/Fridge-App",
   },
 ];
 
@@ -37,7 +37,16 @@ const ProjectsBox = () => {
           return (
             <li className="mb-10" key={index}>
               <div>
-                {/* <Image src="" alt={project.title} /> */}
+                {project.image && (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={100}
+                    height={100}
+                    className="w-full mb-4"
+                    unoptimized
+                  />
+                )}
                 <h3 className="mb-2">{project.title}</h3>
                 <ul className="grid grid-cols-3 gap-4 whitespace-nowrap  items-start ">
                   {project.tools.map((tool, index) => {
@@ -50,12 +59,16 @@ const ProjectsBox = () => {
                 </ul>
               </div>
               <div className="flex mt-6">
-                <CustomButton
-                  href="hello"
-                  className="mr-8"
-                  label="VIEW PROJECT"
-                />
-                <CustomButton href="hello" label="VIEW CODE" />
+                {project.link && (
+                  <CustomButton
+                    href={project.link}
+                    className="mr-8"
+                    label="VIEW PROJECT"
+                  />
+                )}
+                {project.code && (
+                  <CustomButton href={project.code} label="VIEW CODE" />
+                )}
               </div>
             </li>
           );
