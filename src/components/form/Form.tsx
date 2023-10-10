@@ -109,7 +109,7 @@ const Form = () => {
         />
         {nameError && (
           <p className="text-[0.75rem] text-[var(--red)] mt-1">
-            Sorry, invalid format here
+            Please enter your name
           </p>
         )}
       </div>
@@ -144,7 +144,7 @@ const Form = () => {
         />
         {messageError && (
           <p className="text-[0.75rem] text-[var(--red)] mt-1">
-            Sorry, invalid format here
+            Please provide a message
           </p>
         )}
       </div>
