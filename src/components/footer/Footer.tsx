@@ -2,7 +2,7 @@ import { Form, Divider, SocialsBox } from "..";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id="footer">
       <h2 className="mb-2">Contact</h2>
       <p className="text-center">
         I would love to hear about your project and how I could help. Please

@@ -1,3 +1,4 @@
+"use client";
 import clsx from "clsx";
 
 interface CustomButtonProps {
@@ -8,9 +9,19 @@ interface CustomButtonProps {
   type?: "button" | "submit" | "reset";
 }
 
+const scrollToFooter = () => {
+  const footer = document.getElementById("footer");
+  if (footer) {
+    window.scrollTo({
+      top: footer.offsetTop,
+      behavior: "smooth",
+    });
+  }
+};
+
 const CustomButton = ({
   label,
-  onClick,
+  onClick = scrollToFooter,
   className,
   href,
   type,
@@ -19,6 +30,7 @@ const CustomButton = ({
     "underline underline-offset-[10px] decoration-[var(--accent)] hover:text-[var(--accent)] w-fit",
     className
   );
+
   return (
     <>
       {href ? (
