@@ -16,8 +16,11 @@ const SocialsBox = () => {
       <div className="flex justify-between w-[100px] mt-4">
         {icons.map((icon, index) => {
           return (
-            <a key={index} href={icon.link}>
-              <FontAwesomeIcon className=" w-7" icon={icon.icon} />
+            <a target="_blank" key={index} href={icon.link}>
+              <FontAwesomeIcon
+                className=" w-7 hover:text-[var(--accent)]"
+                icon={icon.icon}
+              />
             </a>
           );
         })}
