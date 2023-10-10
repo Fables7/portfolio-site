@@ -1,4 +1,4 @@
-import { Form } from "..";
+import { Form, Divider } from "..";
 
 const Footer = () => {
   return (
@@ -9,6 +9,7 @@ const Footer = () => {
         fill in the form, and {"I'll"} get back to you as soon as possible
       </p>
       <Form />
+      <Divider className="mt-32" />
     </footer>
   );
 };
