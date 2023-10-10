@@ -34,7 +34,10 @@ const Form = () => {
 
   const messageClassName = clsx(rootClassName, "resize-y h-[100px]");
   return (
-    <form onSubmit={onSubmitHandler} className="mt-8">
+    <form
+      onSubmit={onSubmitHandler}
+      className="mt-8 flex flex-col w-full items-end"
+    >
       <input
         type="text"
         name="name"
