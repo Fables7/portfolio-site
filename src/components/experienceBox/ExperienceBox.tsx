@@ -4,10 +4,10 @@ interface ExperienceBoxProps {
 
 const ExperienceBox = ({ items }: ExperienceBoxProps) => {
   return (
-    <div>
+    <div className="grid grid-flow-row grid-cols-1 md:grid-cols-2">
       {items.map((item, index) => {
         return (
-          <div className="text-center mb-8" key={index}>
+          <div className="text-center mb-8 md:text-left" key={index}>
             <h2>{item}</h2>
             <p>2 Years Experience</p>
           </div>

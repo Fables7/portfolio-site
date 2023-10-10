@@ -29,10 +29,10 @@ const ProjectsBox = () => {
   return (
     <div className="w-full">
       <div className="flex justify-between mb-10">
-        <h1>Projects</h1>
+        <h2>Projects</h2>
         <CustomButton />
       </div>
-      <ul>
+      <ul className="grid grid-flow-row grid-cols-1 md:grid-cols-2 md:gap-8">
         {projects.map((project, index) => {
           return (
             <li className="mb-10" key={index}>

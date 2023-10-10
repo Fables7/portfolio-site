@@ -11,9 +11,9 @@ const icons = [
 
 const SocialsBox = () => {
   return (
-    <div className="flex flex-col items-center">
-      <h3 className="">Fabien Lestrat</h3>
-      <div className="flex justify-between w-[100px] mt-4">
+    <div className="flex flex-col items-center md:flex-row md:justify-between  w-full">
+      <h3>Fabien Lestrat</h3>
+      <div className="flex justify-between w-[100px] mt-4 items-center md:m-0">
         {icons.map((icon, index) => {
           return (
             <a target="_blank" key={index} href={icon.link}>

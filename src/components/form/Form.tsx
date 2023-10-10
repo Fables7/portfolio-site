@@ -87,7 +87,7 @@ const Form = () => {
   };
 
   const rootClassName =
-    "w-full bg-transparent focus:outline-none px-8 border-b-2  text-white placeholder-opacity-50 placeholder-[white] pb-3 box-border focus-within:border-[var(--accent)]";
+    "w-full bg-transparent focus:outline-none px-8 border-b-2 border-[var(--gray)]  text-white placeholder-opacity-50 placeholder-[white] pb-3 box-border focus-within:border-[var(--accent)]";
 
   const messageClassName = clsx(rootClassName, "resize-y h-[100px]");
   return (
@@ -104,7 +104,7 @@ const Form = () => {
           value={formState.name}
           onChange={handleInputChange}
           className={rootClassName}
-          style={{ borderColor: nameError ? "var(--red)" : "white" }}
+          style={{ borderColor: nameError ? "var(--red)" : undefined }}
           onKeyDown={handleKeyPress}
         />
         {nameError && (
@@ -122,7 +122,7 @@ const Form = () => {
           value={formState.email}
           onChange={handleInputChange}
           className={rootClassName}
-          style={{ borderColor: emailError ? "var(--red)" : "white" }}
+          style={{ borderColor: emailError ? "var(--red)" : undefined }}
           onKeyDown={handleKeyPress}
         />
         {emailError && (
@@ -139,7 +139,7 @@ const Form = () => {
           value={formState.message}
           onChange={handleInputChange}
           className={messageClassName}
-          style={{ borderColor: messageError ? "var(--red)" : "white" }}
+          style={{ borderColor: messageError ? "var(--red)" : undefined }}
           onKeyDown={handleKeyPress}
         />
         {messageError && (
