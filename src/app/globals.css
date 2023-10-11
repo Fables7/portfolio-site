@@ -82,3 +82,9 @@ footer {
     font-size: 1.125rem;
   }
 }
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 5.5rem;
+    line-height: 85px;
+  }
+}

@@ -93,7 +93,7 @@ const Form = () => {
   return (
     <form
       onSubmit={onSubmitHandler}
-      className="mt-8 flex flex-col w-full items-end"
+      className="mt-8 flex flex-col w-full items-end  lg:mt-0 lg:w-[445px]"
       ref={form}
     >
       <div className="w-full flex flex-col items-end mb-6">
