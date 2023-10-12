@@ -4,8 +4,8 @@ import {
   ProjectsBox,
   Divider,
   SocialsBox,
+  ProfileImg,
 } from "@/components";
-import Image from "next/image";
 
 const experienceItems = ["HTML", "CSS", "JavaScript", "Accessibility", "React"];
 
@@ -18,17 +18,7 @@ export default function Home() {
         </header>
 
         <div className="flex flex-col items-center md:flex-row-reverse relative">
-          <div className="relative md:absolute w-[175px] h-[250px] md:h-[450px]  md:w-[280px] my-10">
-            <Image
-              priority
-              className="md:absolute  z-0 "
-              src="/profile.jpeg"
-              alt="profile"
-              fill
-              style={{ objectFit: "cover" }}
-              sizes="100%"
-            />
-          </div>
+          <ProfileImg />
           <div className="flex flex-col items-center text-center md:text-left md:items-start md:mt-20 md:z-10">
             <h1>
               Nice to <br className="hidden md:inline lg:hidden" /> meet you!{" "}

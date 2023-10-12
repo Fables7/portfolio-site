@@ -1,4 +1,6 @@
-import { CustomButton } from "..";
+"use client";
+import { useState } from "react";
+import { CustomButton, SkeletonImg } from "..";
 import Image from "next/image";
 
 const projects = [
@@ -26,6 +28,12 @@ const projects = [
 ];
 
 const ProjectsBox = () => {
+  const [imageIsLoading, setImageIsLoading] = useState(true);
+
+  const onLoad = () => {
+    setImageIsLoading(false);
+  };
+
   return (
     <div className="w-full mb-10 lg:mt-28">
       <div className="flex justify-between mb-14">
@@ -41,11 +49,16 @@ const ProjectsBox = () => {
                 <div className="relative flex group  mb-4  h-[253px] lg:h-[400px]">
                   {project.image && project.image !== "" && (
                     <>
+                      {imageIsLoading && <SkeletonImg />}
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        style={{ objectFit: "cover" }}
+                        onLoad={onLoad}
+                        style={{
+                          objectFit: "cover",
+                          display: imageIsLoading ? "none" : "",
+                        }}
                         unoptimized
                         priority
                       />
