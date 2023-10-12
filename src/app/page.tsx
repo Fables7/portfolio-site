@@ -7,8 +7,6 @@ import {
   ProfileImg,
 } from "@/components";
 
-const experienceItems = ["HTML", "CSS", "JavaScript", "Accessibility", "React"];
-
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center  p-4 box-border  bg-[var(--primary-black)]">
@@ -38,7 +36,7 @@ export default function Home() {
           </div>
         </div>
         <Divider className=" mt-20 mb-10" />
-        <ExperienceBox items={experienceItems} />
+        <ExperienceBox />
         <Divider className=" mt-8 mb-8 lg:hidden" />
         <ProjectsBox />
       </div>

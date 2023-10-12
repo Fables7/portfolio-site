@@ -20,7 +20,15 @@ const projects = [
   },
   {
     title: "FRIDGE APP",
-    tools: ["React-Native", "TypeScript", "CSS", "Node.js", "MongoDB"],
+    tools: [
+      "React-Native",
+      "TypeScript",
+      "CSS",
+      "Node.js",
+      "MongoDB",
+      "express.js",
+      "AWS",
+    ],
     image: "/fridge-app.svg",
     link: "",
     code: "https://github.com/Fables7/Fridge-App",
@@ -79,10 +87,10 @@ const ProjectsBox = () => {
                   )}
                 </div>
                 <h3 className="mb-2">{project.title}</h3>
-                <ul className="grid grid-cols-3 gap-4 whitespace-nowrap  items-start ">
+                <ul className="flex  flex-wrap">
                   {project.tools.map((tool, index) => {
                     return (
-                      <li className=" w-fit" key={index}>
+                      <li className=" mr-4  " key={index}>
                         <p>{tool}</p>
                       </li>
                     );
