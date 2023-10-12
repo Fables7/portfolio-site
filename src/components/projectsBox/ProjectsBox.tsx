@@ -5,21 +5,21 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "GITHUB SEARCH",
+    title: "GitHub Search",
     tools: ["React", "TypeScript", "Tailwind"],
     image: "/github-search-thumbnail.jpeg",
     link: "https://fables7-github-search-user.netlify.app/",
     code: "https://github.com/Fables7/github-user-search-app",
   },
   {
-    title: "MEMORY GAME",
+    title: "Memory Game",
     tools: ["React", "TypeScript", "Tailwind"],
     image: "/memory-game-thumbnail.webp",
     link: "https://fables7-memory-game.netlify.app/",
     code: "https://github.com/Fables7/memory-game",
   },
   {
-    title: "FRIDGE APP",
+    title: "Fridge App",
     tools: [
       "React-Native",
       "TypeScript",
@@ -32,6 +32,13 @@ const projects = [
     image: "/fridge-app.svg",
     link: "",
     code: "https://github.com/Fables7/Fridge-App",
+  },
+  {
+    title: "Zinnia Block Explorer",
+    tools: ["React", "TypeScript", "CSS", "Node.js"],
+    image: "/zinnia-explorer.png",
+    link: "https://docs.google.com/document/d/1bbqunPOIxZmCjEEuFb-6jWnLLic96_05yQiPcJ6MHX8/edit?usp=sharing",
+    code: "",
   },
 ];
 
@@ -86,7 +93,7 @@ const ProjectsBox = () => {
                     </>
                   )}
                 </div>
-                <h3 className="mb-2">{project.title}</h3>
+                <h3 className="mb-2">{project.title.toUpperCase()}</h3>
                 <ul className="flex  flex-wrap">
                   {project.tools.map((tool, index) => {
                     return (
