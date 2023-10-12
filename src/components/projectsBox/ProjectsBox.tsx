@@ -47,6 +47,7 @@ const ProjectsBox = () => {
                         fill
                         style={{ objectFit: "cover" }}
                         unoptimized
+                        priority
                       />
 
                       <div className="absolute hidden lg:flex  flex-col items-center justify-center bg-black bg-opacity-70  w-full h-full transition ease-in-out duration-300 opacity-0 group-hover:opacity-100">

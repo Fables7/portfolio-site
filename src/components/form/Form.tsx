@@ -22,6 +22,7 @@ const Form = () => {
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [messageError, setMessageError] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -74,6 +75,15 @@ const Form = () => {
         )
         .then(
           (result) => {
+            setFormState({
+              name: "",
+              email: "",
+              message: "",
+            });
+            setEmailSent(true);
+            setTimeout(() => {
+              setEmailSent(false);
+            }, 2499);
             console.log(result.text);
           },
           (error) => {
@@ -94,7 +104,7 @@ const Form = () => {
   };
 
   const rootClassName =
-    "w-full bg-transparent focus:outline-none px-8 border-b-2 border-[var(--gray)]  text-white placeholder-opacity-50 placeholder-[white] pb-3 box-border focus-within:border-[var(--accent)]";
+    "w-full bg-transparent  focus:outline-none px-8 border-b-2 border-[var(--gray)]   text-white placeholder-opacity-50 placeholder-[white] pb-3 box-border focus-within:border-[var(--accent)]";
 
   const messageClassName = clsx(rootClassName, "resize-y h-[100px]");
   return (
@@ -156,7 +166,12 @@ const Form = () => {
         )}
       </div>
 
-      <CustomButton label="SEND MESSAGE" type="submit" />
+      <div className="flex">
+        {emailSent && (
+          <p className="mr-4 text-[var(--accent)] animate-fade-in-out">sent</p>
+        )}
+        <CustomButton label="SEND MESSAGE" type="submit" />
+      </div>
     </form>
   );
 };
