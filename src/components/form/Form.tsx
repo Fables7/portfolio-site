@@ -83,7 +83,8 @@ const Form = () => {
             setEmailSent(true);
             setTimeout(() => {
               setEmailSent(false);
-            }, 2499);
+            }, 2000);
+
             console.log(result.text);
           },
           (error) => {
@@ -167,9 +168,7 @@ const Form = () => {
       </div>
 
       <div className="flex">
-        {emailSent && (
-          <p className="mr-4 text-[var(--accent)] animate-fade-in-out">sent</p>
-        )}
+        {emailSent && <p className="mr-4 text-[var(--accent)]">sent</p>}
         <CustomButton label="SEND MESSAGE" type="submit" />
       </div>
     </form>
