@@ -19,7 +19,7 @@ const projects = [
   {
     title: "FRIDGE APP",
     tools: ["React-Native", "TypeScript", "CSS", "Node.js", "MongoDB"],
-    image: "",
+    image: "/fridge-app.svg",
     link: "",
     code: "https://github.com/Fables7/Fridge-App",
   },
@@ -38,19 +38,16 @@ const ProjectsBox = () => {
           return (
             <li className="mb-10" key={index}>
               <div>
-                <div className="relative flex group  mb-4  ">
-                  {project.image && (
+                <div className="relative flex group  mb-4  h-[253px] lg:h-[400px]">
+                  {project.image && project.image !== "" && (
                     <>
-                      <div className="h-[253px] lg:h-[400px]  ">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          layout="fill"
-                          objectFit="cover"
-                          // className="w-full "
-                          unoptimized
-                        />
-                      </div>
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        unoptimized
+                      />
 
                       <div className="absolute hidden lg:flex  flex-col items-center justify-center bg-black bg-opacity-70  w-full h-full transition ease-in-out duration-300 opacity-0 group-hover:opacity-100">
                         {project.link && (

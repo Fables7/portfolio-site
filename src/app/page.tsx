@@ -24,8 +24,9 @@ export default function Home() {
               className="md:absolute  z-0 "
               src="/profile.jpeg"
               alt="profile"
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: "cover" }}
+              sizes="100%"
             />
           </div>
           <div className="flex flex-col items-center text-center md:text-left md:items-start md:mt-20 md:z-10">

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { CustomButton } from "..";
 import clsx from "clsx";
 import emailjs from "emailjs-com";
@@ -11,6 +11,7 @@ interface FormState {
 }
 
 const Form = () => {
+  const [isMounted, setIsMounted] = useState(false);
   const form = useRef<HTMLFormElement>(null);
   const [formState, setFormState] = useState<FormState>({
     name: "",
@@ -21,6 +22,12 @@ const Form = () => {
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [messageError, setMessageError] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
