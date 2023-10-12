@@ -3,7 +3,7 @@ import { Form, Divider, SocialsBox } from "..";
 const Footer = () => {
   return (
     <footer id="footer">
-      <div className="md:w-[445px] flex flex-col items-center lg:w-[1110px] lg:flex-row lg:items-start lg:justify-between">
+      <div className="w-[345px] md:w-[445px]  flex flex-col items-center lg:w-[1110px] lg:flex-row lg:items-start lg:justify-between">
         <div className="flex flex-col items-center lg:items-start">
           <h2 className="lg:hidden">Contact</h2>
           <h1 className="hidden lg:inline">Contact</h1>

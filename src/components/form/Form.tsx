@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { CustomButton } from "..";
 import clsx from "clsx";
 import emailjs from "emailjs-com";
+import { PulseLoader } from "react-spinners";
 
 interface FormState {
   name: string;
@@ -22,7 +23,7 @@ const Form = () => {
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [messageError, setMessageError] = useState(false);
-  const [emailSent, setEmailSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -41,7 +42,7 @@ const Form = () => {
 
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    setIsLoading(true);
     setNameError(false);
     setEmailError(false);
     setMessageError(false);
@@ -80,15 +81,13 @@ const Form = () => {
               email: "",
               message: "",
             });
-            setEmailSent(true);
-            setTimeout(() => {
-              setEmailSent(false);
-            }, 2000);
 
             console.log(result.text);
+            setIsLoading(false);
           },
           (error) => {
             console.log(error.text);
+            setIsLoading(false);
           }
         );
     }
@@ -111,7 +110,7 @@ const Form = () => {
   return (
     <form
       onSubmit={onSubmitHandler}
-      className="mt-8 flex flex-col w-full items-end  lg:mt-0 lg:w-[445px]"
+      className="mt-8 flex flex-col w-full items-end  lg:mt-0 lg:w-[445px] h-[300px]"
       ref={form}
     >
       <div className="w-full flex flex-col items-end mb-6">
@@ -168,8 +167,16 @@ const Form = () => {
       </div>
 
       <div className="flex">
-        {emailSent && <p className="mr-4 text-[var(--accent)]">sent</p>}
-        <CustomButton label="SEND MESSAGE" type="submit" />
+        {isLoading ? (
+          <PulseLoader
+            color={"var(--accent)"}
+            loading={isLoading}
+            size={10}
+            speedMultiplier={0.5}
+          />
+        ) : (
+          <CustomButton label="SEND MESSAGE" type="submit" />
+        )}
       </div>
     </form>
   );
