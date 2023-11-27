@@ -40,6 +40,13 @@ const projects = [
     link: "https://docs.google.com/document/d/1bbqunPOIxZmCjEEuFb-6jWnLLic96_05yQiPcJ6MHX8/edit?usp=sharing",
     code: "",
   },
+  {
+    title: "Issue Tracker",
+    tools: ["NextJs", "TypeScript", "Tailwind", "SQL", "Prisma", "Planetscale"],
+    image: "/issue-tracker.svg",
+    link: "https://issue-tracker-delta-sage.vercel.app/",
+    code: "https://github.com/Fables7/issue-tracker",
+  },
 ];
 
 const ProjectsBox = () => {

@@ -10,6 +10,7 @@ const experienceItems = [
   { skill: "Node.js", years: 2 },
   { skill: "MongoDB", years: 1 },
   { skill: "Solidity", years: 1 },
+  { skill: "SQL", years: 1 },
 ];
 
 const ExperienceBox = () => {
