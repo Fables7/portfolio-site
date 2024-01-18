@@ -2,52 +2,7 @@
 import { useState } from "react";
 import { CustomButton, SkeletonImg } from "..";
 import Image from "next/image";
-
-const projects = [
-  {
-    title: "GitHub Search",
-    tools: ["React", "TypeScript", "Tailwind"],
-    image: "/github-search-thumbnail.jpeg",
-    link: "https://fables7-github-search-user.netlify.app/",
-    code: "https://github.com/Fables7/github-user-search-app",
-  },
-  {
-    title: "Memory Game",
-    tools: ["React", "TypeScript", "Tailwind"],
-    image: "/memory-game-thumbnail.webp",
-    link: "https://fables7-memory-game.netlify.app/",
-    code: "https://github.com/Fables7/memory-game",
-  },
-  {
-    title: "Fridge App",
-    tools: [
-      "React-Native",
-      "TypeScript",
-      "CSS",
-      "Node.js",
-      "MongoDB",
-      "express.js",
-      "AWS",
-    ],
-    image: "/fridge-app.svg",
-    link: "",
-    code: "https://github.com/Fables7/Fridge-App",
-  },
-  {
-    title: "Zinnia Block Explorer",
-    tools: ["React", "TypeScript", "CSS", "Node.js"],
-    image: "/zinnia-explorer.png",
-    link: "https://docs.google.com/document/d/1bbqunPOIxZmCjEEuFb-6jWnLLic96_05yQiPcJ6MHX8/edit?usp=sharing",
-    code: "",
-  },
-  {
-    title: "Issue Tracker",
-    tools: ["NextJs", "TypeScript", "Tailwind", "SQL", "Prisma", "Planetscale"],
-    image: "/issue-tracker.svg",
-    link: "https://issue-tracker-delta-sage.vercel.app/",
-    code: "https://github.com/Fables7/issue-tracker",
-  },
-];
+import { projects } from "@/constants";
 
 const ProjectsBox = () => {
   const [imageIsLoading, setImageIsLoading] = useState(true);
