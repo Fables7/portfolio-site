@@ -3,7 +3,7 @@ import { Form, Divider, SocialsBox } from "..";
 const Footer = () => {
   return (
     <footer id="footer">
-      <div className="w-[345px] md:w-[445px]  flex flex-col items-center lg:w-[1110px] lg:flex-row lg:items-start lg:justify-between">
+      <div className="w-full flex flex-col items-center lg:max-w-[1110px] xl:px-0 px-10 lg:flex-row lg:items-start lg:justify-between">
         <div className="flex flex-col items-center lg:items-start">
           <h2 className="lg:hidden">Contact</h2>
           <h1 className="hidden lg:inline">Contact</h1>
@@ -15,7 +15,7 @@ const Footer = () => {
         <Form />
       </div>
 
-      <div className="w-full mt-24 lg:w-[1110px]">
+      <div className="w-full mt-24 lg:max-w-[1110px] xl:px-0 px-10">
         <Divider className="mb-10 " />
         <SocialsBox />
       </div>

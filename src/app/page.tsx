@@ -10,7 +10,7 @@ import {
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center  p-4 box-border  bg-[var(--primary-black)]">
-      <div className="w-[345px] md:w-[708px] lg:w-[1110px]">
+      <div className="w-full mx-auto lg:max-w-[1110px] xl:px-0 px-10 ">
         <header>
           <SocialsBox />
         </header>
