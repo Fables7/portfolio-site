@@ -1,5 +1,21 @@
 export const projects = [
   {
+    title: "AI Saas",
+    tools: [
+      "Nextjs",
+      "Typescript",
+      "Tailwind",
+      "OpenAI",
+      "Stripe",
+      "Clerk",
+      "Crisp",
+      "MySQL",
+    ],
+    image: "/ai-saas.png",
+    link: "https://fab-ai-saas.vercel.app/",
+    code: "https://github.com/Fables7/ai-saas",
+  },
+  {
     title: "Crowd funding app (WIP)",
     tools: ["Solidity", "Vite", "Javascript", "Tailwind", "Metamask"],
     image: "/crowdfunding.png",
