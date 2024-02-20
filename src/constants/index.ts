@@ -1,5 +1,12 @@
 export const projects = [
   {
+    title: "Figma Clone",
+    tools: ["Nextjs", "Typescript", "Tailwind", "Liveblocks"],
+    image: "/figma-clone.png",
+    link: "https://figma-clone-ruby.vercel.app/",
+    code: "https://github.com/Fables7/figma-clone",
+  },
+  {
     title: "AI Saas",
     tools: [
       "Nextjs",
