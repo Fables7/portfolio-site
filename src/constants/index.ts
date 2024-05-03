@@ -1,5 +1,33 @@
 export const projects = [
   {
+    title: "E-Commerce Admin",
+    tools: ["Nextjs", "Typescript", "Tailwind", "Clerk", "Stripe"],
+    image: "/e-commerce-admin.png",
+    link: "https://fab-ecommerce-admin.vercel.app/",
+    code: "https://github.com/Fables7/ecommerce-admin",
+  },
+  {
+    title: "E-Commerce Store",
+    tools: ["Nextjs", "Typescript", "Tailwind", "Clerk", "Stripe"],
+    image: "/e-commerce-store.png",
+    link: "https://fab-ecommerce-store.vercel.app/",
+    code: "https://github.com/Fables7/ecommerce-store",
+  },
+  {
+    title: "LMS",
+    tools: ["Nextjs", "Typescript", "Tailwind", "Clerk", "Stripe"],
+    image: "/lms.png",
+    link: "https://lms-fab.vercel.app/",
+    code: "https://github.com/Fables7/lms-fab",
+  },
+  {
+    title: "Discord Clone",
+    tools: ["Nextjs", "Typescript", "Tailwind", "Websockets"],
+    image: "/discord-clone.png",
+    link: "https://fab-discord-clone.up.railway.app/",
+    code: "https://github.com/Fables7/discord-clone",
+  },
+  {
     title: "Figma Clone",
     tools: ["Nextjs", "Typescript", "Tailwind", "Liveblocks"],
     image: "/figma-clone.png",
